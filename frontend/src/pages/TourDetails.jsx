@@ -1,19 +1,21 @@
 import React, { useState, useRef, useEffect, useContext } from 'react'
 import '../styles/tour-details.css';
-import tourData from '../assets/data/tours';
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
 import { useParams } from 'react-router-dom';
 import calculateAvgRating from '../utils/avgRating';
 import avatar from '../assets/images/avatar.jpg'
 import Booking from '../components/Booking/Booking'
+import useFetch from '../hooks/useFetch';
+import { BASE_URL } from '../utils/config';
 
 
 
 const TourDetails = () => {
    const { id } = useParams();
-   const tour = tourData.find(tour => tour.id === id);
    const reviewMsgRef = useRef('')
    const [tourRating, setTourRating] = useState(null)
+
+   const { data: tour } = useFetch(`${BASE_URL}/tours/${id}`)
 
    const { photo, title, desc, price, reviews, city, address, distance, maxGroupSize } = tour;
    const { totalRating, avgRating } = calculateAvgRating(reviews)
@@ -24,6 +26,11 @@ const TourDetails = () => {
       const reviewText = reviewMsgRef.current.value
       alert(`${reviewText}, ${tourRating}`)
    }
+
+   useEffect(()=> {
+      window.scrollTo(0,0)
+   },[])
+
    return (
       <>
          <section>
