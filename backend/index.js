@@ -39,7 +39,7 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/tours", tourRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/review", reviewRoute);
-app.use("/api/v1/booking", bookingRoute);
+app.use("   ", bookingRoute);
 
 app.listen(port, () => {
    console.log(`Server listening on port ${port}`);
