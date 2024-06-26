@@ -10,7 +10,6 @@ This is a complete and functional Tours and Travel Booking System made using Rea
 - [How to Run](#how-to-run)
 - [Notes](#notes)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -33,12 +32,12 @@ This is a complete and functional Tours and Travel Booking System made using Rea
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
+    git clone https://github.com/code-geass69/Tours-and-Travels.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd your-repo-name
+    cd Tours-and-Travels
     ```
 
 ## How to Run
